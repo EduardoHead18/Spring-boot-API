@@ -1,0 +1,10 @@
+1. Crear la base de datos
+2. Configurar la conexion a la base de datos en el properties
+3. Lllevar el diseño de base de datos a codigo
+4. Correr el proyecto para que cree las entidades
+5. Creamos el repositorio
+6. Creamos el servicio
+7. Creamos clases de pruebas
+8. Creamso el controlador
+9. Creamos las vistas
+10. Probamos la app 
