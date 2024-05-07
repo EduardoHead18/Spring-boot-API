@@ -15,10 +15,10 @@ services:
     container_name: maria-db
     image: mariadb:latest
     environment:
-      - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_PASSWORD=lalo
-      - MARIADB_USER=eduardo
-      - MARIADB_DATABASE=spring_db
+      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
     volumes:
       - ./db/:/var/lib/mysql/
     ports:
