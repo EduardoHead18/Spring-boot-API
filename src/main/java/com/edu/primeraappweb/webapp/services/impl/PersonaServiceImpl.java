@@ -17,20 +17,20 @@ public class PersonaServiceImpl implements PersonaService {
   
     // obtner todas las personas de la db
 
-    public List<Persona> obtenerTodas() {
+    public List<Persona> getAllPerson() {
         return personaRepository.findAll();
     }
 
     // obtner persona por id de la db
 
-    public Persona obtenerPorId(Long id) {
+    public Persona getById(Long id) {
         return personaRepository.findById(id).orElse(null);
     }
 
     // crear persona en la db
 
 
-    public Persona crearPersona(Persona persona) {
+    public Persona createPerson(Persona persona) {
         try {
             return personaRepository.save(persona);
         } catch (Exception e) {
@@ -41,7 +41,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     // actaulizar persona en la db
  
-    public Persona actualizarPersona(Long id, Persona persona) {
+    public Persona updatePerson(Long id, Persona persona) {
         try {
             Persona personaExist = personaRepository.findById(id).orElse(persona);
             if (personaExist != null) {
@@ -57,7 +57,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     // eliminar persona en la db
 
-    public void eliminarPersona(Long id) {
+    public void deletePerson(Long id) {
         try {
             personaRepository.deleteById(id);
         } catch (Exception e) {

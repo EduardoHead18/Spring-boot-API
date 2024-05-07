@@ -5,14 +5,14 @@ import java.util.List;
 import com.edu.primeraappweb.webapp.entities.Persona;
 
 public interface PersonaService {
-  List<Persona> obtenerTodas();
+  List<Persona> getAllPerson();
 
-  Persona obtenerPorId(Long id);
+  Persona getById(Long id);
 
-  Persona crearPersona(Persona persona);
+  Persona createPerson(Persona persona);
 
-  Persona actualizarPersona(Long id, Persona persona);
+  Persona updatePerson(Long id, Persona persona);
 
-  void eliminarPersona(Long id);
+  void deletePerson(Long id);
 
 }

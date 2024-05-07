@@ -1,10 +1,10 @@
 package com.edu.primeraappweb.webapp.controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 // import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,15 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.edu.primeraappweb.webapp.entities.Persona;
 import com.edu.primeraappweb.webapp.services.PersonaService;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/person")
 public class PersonaController {
     @Autowired
     private PersonaService personaService;
@@ -37,7 +36,7 @@ public class PersonaController {
 
     @GetMapping("/")
     public List<Persona> getAllPerson() {
-        List<Persona> personas = personaService.obtenerTodas();
+        List<Persona> personas = personaService.getAllPerson();
         return personas;
     }
     
@@ -60,7 +59,7 @@ public class PersonaController {
     @PostMapping("/")
     public Persona createPerson(@RequestBody Persona persona) {
         try {
-            Persona result = personaService.crearPersona(persona);
+            Persona result = personaService.createPerson(persona);
             return result;
         } catch (Exception e) {
             return null;
@@ -69,7 +68,6 @@ public class PersonaController {
     // delete person
     @DeleteMapping("/{id}")
     public void deletePerson(@PathVariable Long id) {
-        personaService.eliminarPersona(id);
+        personaService.deletePerson(id);
     }
-
 }
